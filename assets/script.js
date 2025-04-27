@@ -1,0 +1,1 @@
+// Full JS with Typed.js, AOS.js, Smooth Scroll, Navbar Color Change, Hover Animations
