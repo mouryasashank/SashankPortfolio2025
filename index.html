@@ -1,43 +1,4 @@
-<script type="text/javascript">
-        var gk_isXlsx = false;
-        var gk_xlsxFileLookup = {};
-        var gk_fileData = {};
-        function filledCell(cell) {
-          return cell !== '' && cell != null;
-        }
-        function loadFileData(filename) {
-        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
-            try {
-                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
-                var firstSheetName = workbook.SheetNames[0];
-                var worksheet = workbook.Sheets[firstSheetName];
-
-                // Convert sheet to JSON to filter blank rows
-                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
-                // Filter out blank rows (rows where all cells are empty, null, or undefined)
-                var filteredData = jsonData.filter(row => row.some(filledCell));
-
-                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
-                var headerRowIndex = filteredData.findIndex((row, index) =>
-                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
-                );
-                // Fallback
-                if (headerRowIndex === -1 || headerRowIndex > 25) {
-                  headerRowIndex = 0;
-                }
-
-                // Convert filtered JSON back to CSV
-                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
-                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
-                return csv;
-            } catch (e) {
-                console.error(e);
-                return "";
-            }
-        }
-        return gk_fileData[filename] || "";
-        }
-        </script><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -72,7 +33,7 @@
 
     <section id="hero" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-100 to-blue-100">
         <div class="container mx-auto text-center px-6">
-            <img src="/assets/headshot.jpg" alt="Headshot" class="w-32 h-32 rounded-full mx-auto mb-6 animate-pulse border-4 border-white shadow-lg">
+            <img src="/assets/headshot.jpg" alt="Headshot" class="w-32 h-32 rounded-full mx-auto mb-6 animate-pulse border-4 border-white shadow-lg" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x300.png?text=Headshot';">
             <h1 class="text-6xl font-bold mb-4">Mourya Sashank Sure</h1>
             <p class="text-3xl mb-8">AI Specialist & Data Scientist</p>
             <div class="space-x-4">
@@ -86,7 +47,7 @@
         <div class="container mx-auto px-6">
             <h2 class="text-4xl font-bold text-center mb-12">About Me</h2>
             <div class="flex flex-col md:flex-row items-center">
-                <img src="/assets/headshot.jpg" alt="Headshot" class="w-48 h-48 rounded-full mb-6 md:mb-0 md:mr-8 shadow-lg">
+                <img src="/assets/headshot.jpg" alt="Headshot" class="w-48 h-48 rounded-full mb-6 md:mb-0 md:mr-8 shadow-lg" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x300.png?text=Headshot';">
                 <div class="text-lg space-y-4">
                     <p>I’m Mourya Sashank Sure, an AI Specialist and Data Scientist passionate about leveraging technology to solve complex problems. With a Master’s in Data Science from UMBC and hands-on experience at UVS InfoTech, I specialize in Generative AI, Conversational AI, and Cloud Computing.</p>
                     <p>My work focuses on building scalable, efficient solutions—whether it’s developing Alexa skills, optimizing translation systems, or deploying models on AWS, Azure, and GCP. I’ve achieved 95%+ accuracy in predictive models and improved system efficiency by 40% through innovative approaches.</p>
@@ -117,7 +78,7 @@
             <h2 class="text-4xl font-bold text-center mb-12">Experience</h2>
             <div class="space-y-12">
                 <div class="flex flex-col md:flex-row items-start">
-                    <img src="/assets/uvs-logo.png" alt="UVS InfoTech Logo" class="w-16 h-16 mb-4 md:mb-0 md:mr-6">
+                    <img src="/assets/uvs-logo.png" alt="UVS InfoTech Logo" class="w-16 h-16 mb-4 md:mb-0 md:mr-6" onerror="this.onerror=null; this.src='https://via.placeholder.com/50x50.png?text=UVS';">
                     <div>
                         <h3 class="text-2xl font-semibold">AI Engineer Intern, UVS InfoTech</h3>
                         <p class="text-gray-600">May 2024 – August 2024</p>
@@ -129,7 +90,7 @@
                     </div>
                 </div>
                 <div class="flex flex-col md:flex-row items-start">
-                    <img src="/assets/umbc-logo.png" alt="UMBC Logo" class="w-16 h-16 mb-4 md:mb-0 md:mr-6">
+                    <img src="/assets/umbc-logo.png" alt="UMBC Logo" class="w-16 h-16 mb-4 md:mb-0 md:mr-6" onerror="this.onerror=null; this.src='https://via.placeholder.com/50x50.png?text=UMBC';">
                     <div>
                         <h3 class="text-2xl font-semibold">Graduate Research Assistant, UMBC</h3>
                         <p class="text-gray-600">August 2023 – May 2024</p>
@@ -149,19 +110,19 @@
             <h2 class="text-4xl font-bold text-center mb-12">Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <video src="/assets/alexa-skill.mp4" class="w-full h-48 object-cover rounded-lg mb-4" muted autoplay loop></video>
+                    <video src="/assets/alexa-skill.mp4" class="w-full h-48 object-cover rounded-lg mb-4 video-placeholder" muted autoplay loop onerror="this.onerror=null; this.parentNode.innerHTML='<div class=\'w-full h-48 bg-gray-200 rounded-lg mb-4 flex items-center justify-center text-gray-500\'>Video Placeholder</div>';"></video>
                     <h3 class="text-xl font-semibold mb-2">Alexa Skill Development</h3>
                     <p class="mb-4">Built an Alexa skill to streamline user tasks, increasing engagement by 30%.</p>
                     <a href="https://github.com/mouryasashank/alexa-skill" class="text-purple-500 hover:underline">GitHub</a>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <video src="/assets/conversational-ai.mp4" class="w-full h-48 object-cover rounded-lg mb-4" muted autoplay loop></video>
+                    <video src="/assets/conversational-ai.mp4" class="w-full h-48 object-cover rounded-lg mb-4 video-placeholder" muted autoplay loop onerror="this.onerror=null; this.parentNode.innerHTML='<div class=\'w-full h-48 bg-gray-200 rounded-lg mb-4 flex items-center justify-center text-gray-500\'>Video Placeholder</div>';"></video>
                     <h3 class="text-xl font-semibold mb-2">Conversational AI System</h3>
                     <p class="mb-4">Developed a chatbot with 90% response accuracy using NLP.</p>
                     <a href="https://medium.com/@mouryasashank/conversational-ai" class="text-purple-500 hover:underline">Medium</a>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <video src="/assets/translation-system.mp4" class="w-full h-48 object-cover rounded-lg mb-4" muted autoplay loop></video>
+                    <video src="/assets/translation-system.mp4" class="w-full h-48 object-cover rounded-lg mb-4 video-placeholder" muted autoplay loop onerror="this.onerror=null; this.parentNode.innerHTML='<div class=\'w-full h-48 bg-gray-200 rounded-lg mb-4 flex items-center justify-center text-gray-500\'>Video Placeholder</div>';"></video>
                     <h3 class="text-xl font-semibold mb-2">Translation System Optimization</h3>
                     <p class="mb-4">Improved efficiency by 40% using advanced NLP techniques.</p>
                     <a href="https://github.com/mouryasashank/translation-system" class="text-purple-500 hover:underline">GitHub</a>
@@ -197,7 +158,7 @@
     </section>
 
     <footer class="bg-gradient-to-r from-purple-500 to-blue-500 py-6 text-white text-center">
-        <p>&copy; 2025 Mourya Sashank Sure. All rights reserved.</p>
+        <p>© 2025 Mourya Sashank Sure. All rights reserved.</p>
     </footer>
 
     <button id="backToTop" class="back-to-top fixed bottom-6 right-6 bg-purple-500 text-white p-4 rounded-full shadow-lg hover:bg-purple-600"><i class="fas fa-arrow-up"></i></button>
