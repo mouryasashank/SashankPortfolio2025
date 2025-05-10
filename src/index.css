@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+}
+
+.dark {
+  background-color: #0d1219;
+  color: #e2e8f0;
+}
+
+.dark .bg-white {
+  background-color: #1a2533;
+}
+
+.dark .bg-gray-100 {
+  background-color: #1a2533;
+}
+
+.dark .text-gray-800 {
+  color: #cbd5e0;
+}
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: #ff6b6b;
+  z-index: 1000;
+  transition: width 0.2s;
+}
+
+.back-to-top {
+  display: none;
+}
+
+.back-to-top.show {
+  display: block;
+}
