@@ -63,3 +63,7 @@ body {
 .swiper-button-prev {
     color: #ff6b6b;
 }
+
+.video-placeholder + div {
+    min-height: 48px; /* Ensures layout doesn't collapse if video fails to load */
+}
