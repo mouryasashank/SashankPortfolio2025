@@ -1,122 +1,112 @@
 import React from 'react';
-import { ExternalLink, Clock, Calendar } from 'lucide-react';
-import { useMediumPosts } from '../hooks/useMediumPosts';
+import { Calendar, ExternalLink, Clock } from 'lucide-react';
 
 export const BlogPosts: React.FC = () => {
-  const { posts, loading, error } = useMediumPosts();
-
-  if (loading) {
-    return (
-      <section id="blog" className="py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Latest Blog Posts
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300">
-              Insights and thoughts on AI, machine learning, and technology
-            </p>
-          </div>
-          <div className="space-y-6">
-            {[...Array(5)].map((_, index) => (
-              <div key={index} className="bg-white dark:bg-gray-800 rounded-lg p-6 animate-pulse">
-                <div className="flex space-x-4">
-                  <div className="w-20 h-20 bg-gray-300 dark:bg-gray-700 rounded-lg"></div>
-                  <div className="flex-1 space-y-3">
-                    <div className="h-4 bg-gray-300 dark:bg-gray-700 rounded w-3/4"></div>
-                    <div className="h-3 bg-gray-300 dark:bg-gray-700 rounded w-1/2"></div>
-                    <div className="h-3 bg-gray-300 dark:bg-gray-700 rounded w-1/4"></div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  if (error) {
-    return (
-      <section id="blog" className="py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Latest Blog Posts
-          </h2>
-          <p className="text-red-600 dark:text-red-400">
-            Unable to load blog posts at this time.
-          </p>
-        </div>
-      </section>
-    );
-  }
+  const mediumPosts = [
+    {
+      id: '1',
+      title: 'Generative AI: The New Era',
+      description: 'A comprehensive dive into the technical landscape of Generative AI, exploring its transformative potential and practical applications in modern technology.',
+      thumbnail: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400',
+      publishedDate: '2023-07-01',
+      readTime: '8 min read',
+      url: 'https://medium.com/@mouryasashank'
+    },
+    {
+      id: '2', 
+      title: 'Convolutional Neural Networks',
+      description: 'Understanding of Convolutional Neural Networks (CNN\'s|ConvNets) - Deep dive into the architecture and applications of CNNs in computer vision and image processing.',
+      thumbnail: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=400',
+      publishedDate: '2020-08-31',
+      readTime: '10 min read',
+      url: 'https://medium.com/@mouryasashank',
+      claps: '39'
+    },
+    {
+      id: '3',
+      title: 'Variational AutoEncoders (VAEs)',
+      description: 'For Complicated Distributions - Advanced exploration of VAEs and their applications in generative modeling and unsupervised learning.',
+      thumbnail: 'https://images.pexels.com/photos/4101143/pexels-photo-4101143.jpeg?auto=compress&cs=tinysrgb&w=400',
+      publishedDate: '2020-08-26',
+      readTime: '12 min read',
+      url: 'https://medium.com/@mouryasashank',
+      claps: '39'
+    },
+    {
+      id: '4',
+      title: 'The Evolving Chatbots',
+      description: 'Making Future - Exploring the evolution of conversational AI and chatbot technologies, from rule-based systems to modern AI-powered assistants.',
+      thumbnail: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=400',
+      publishedDate: '2020-09-03',
+      readTime: '8 min read',
+      url: 'https://medium.com/@mouryasashank',
+      claps: '90'
+    }
+  ];
 
   return (
     <section id="blog" className="py-20 bg-gray-50 dark:bg-gray-800">
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Latest Blog Posts
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300">
-            Insights and thoughts on AI, machine learning, and technology
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            Insights and thoughts on AI, machine learning, and enterprise technology from my Medium blog
           </p>
         </div>
-        
-        <div className="space-y-6">
-          {posts.map((post, index) => (
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+          {mediumPosts.map((post, index) => (
             <article
               key={post.id}
-              className="bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 animate-slide-in-up"
+              className="group bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="flex flex-col sm:flex-row">
-                {/* Thumbnail */}
-                <div className="sm:w-32 sm:h-32 w-full h-48 flex-shrink-0">
-                  <img
-                    src={post.thumbnail}
-                    alt={post.title}
-                    className="w-full h-full object-cover"
-                  />
+              <div className="relative overflow-hidden">
+                <img
+                  src={post.thumbnail}
+                  alt={post.title}
+                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                  Medium
+                </div>
+              </div>
+              
+              <div className="p-6">
+                <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400 mb-3">
+                  <div className="flex items-center">
+                    <Calendar className="w-4 h-4 mr-2" />
+                    <span>{new Date(post.publishedDate).toLocaleDateString()}</span>
+                    <Clock className="w-4 h-4 ml-4 mr-2" />
+                    <span>{post.readTime}</span>
+                  </div>
+                  {post.claps && (
+                    <div className="flex items-center text-green-600 dark:text-green-400 font-medium">
+                      <span className="mr-1">👏</span>
+                      <span>{post.claps}</span>
+                    </div>
+                  )}
                 </div>
                 
-                {/* Content */}
-                <div className="flex-1 p-6">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 line-clamp-2">
-                    {post.title.length > 60 ? `${post.title.substring(0, 60)}...` : post.title}
-                  </h3>
-                  
-                  <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-2">
-                    {post.description}
-                  </p>
-                  
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400">
-                      <div className="flex items-center">
-                        <Calendar className="w-4 h-4 mr-1" />
-                        {new Date(post.publishedDate).toLocaleDateString('en-US', {
-                          year: 'numeric',
-                          month: 'short',
-                          day: 'numeric'
-                        })}
-                      </div>
-                      <div className="flex items-center">
-                        <Clock className="w-4 h-4 mr-1" />
-                        {post.readTime}
-                      </div>
-                    </div>
-                    
-                    <a
-                      href={post.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200"
-                    >
-                      Read More
-                      <ExternalLink className="w-4 h-4 ml-1" />
-                    </a>
-                  </div>
-                </div>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                  {post.title}
+                </h3>
+                
+                <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+                  {post.description}
+                </p>
+                
+                <a
+                  href={post.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium transition-colors duration-300"
+                >
+                  Read on Medium
+                  <ExternalLink className="w-4 h-4 ml-2" />
+                </a>
               </div>
             </article>
           ))}
@@ -127,10 +117,10 @@ export const BlogPosts: React.FC = () => {
             href="https://medium.com/@mouryasashank"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors duration-300"
+            className="inline-flex items-center px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
           >
             View All Posts on Medium
-            <ExternalLink className="w-4 h-4 ml-2" />
+            <ExternalLink className="w-5 h-5 ml-2" />
           </a>
         </div>
       </div>

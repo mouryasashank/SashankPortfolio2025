@@ -51,17 +51,19 @@ export const Navigation: React.FC = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-40 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200/50 dark:border-gray-700/50">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <button 
-            onClick={() => scrollToSection('#hero')}
-            className="font-bold text-xl bg-gradient-to-r from-blue-600 via-purple-600 to-orange-600 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300"
-          >
-            Portfolio
-          </button>
+        <div className="flex items-center justify-between h-16">
+          {/* Logo - Fixed on left */}
+          <div className="flex-none">
+            <button 
+              onClick={() => scrollToSection('#hero')}
+              className="font-bold text-xl bg-gradient-to-r from-blue-600 via-purple-600 to-orange-600 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300"
+            >
+              Portfolio
+            </button>
+          </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden md:flex flex-1 justify-center space-x-8">
             {navItems.map((item) => (
               <button
                 key={item.label}
@@ -77,14 +79,17 @@ export const Navigation: React.FC = () => {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Empty div for spacing */}
+          <div className="flex-none w-20"></div>
         </div>
+
+        {/* Mobile Menu Button - Fixed on right */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200 flex-shrink-0"
+        >
+          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
 
         {/* Mobile Navigation */}
         {isOpen && (

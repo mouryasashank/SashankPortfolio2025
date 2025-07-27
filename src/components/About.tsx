@@ -1,6 +1,7 @@
 import React from 'react';
 import { Github, Linkedin, BookOpen, ArrowRight } from 'lucide-react';
 import { Timeline } from './Timeline';
+import beachPhoto from '../assets/images/beach-photo.jpg';
 
 export const About: React.FC = () => {
   const timelineItems = [
@@ -8,31 +9,37 @@ export const About: React.FC = () => {
       id: '1',
       title: 'Started AI Journey',
       date: '2018',
-      description: 'Began exploring machine learning and deep learning during undergraduate studies'
+      description: 'Began exploring machine learning and deep learning during undergraduate studies at SASTRA University'
     },
     {
       id: '2',
-      title: 'Stepped on AI Industry',
+      title: 'First Industry Experience',
       date: '2019',
-      description: 'Worked on real-world problems and started working on deep learning models'
+      description: 'Joined SASTRA Technology Business Incubator - Built autonomous UGV cotton harvester using YOLOv3 and SLAM'
     },
     {
       id: '3',
-      title: 'Research Breakthrough',
-      date: '2020',
-      description: 'Published first paper on 3D CNN Based Emotion Recognition'
+      title: 'Data Engineering Role',
+      date: '2021',
+      description: 'Joined Cognizant - Developed speech-to-text models achieving 95% accuracy for disfluency detection'
     },
     {
       id: '4',
-      title: 'Graduate Studies',
+      title: 'Research & Publication',
       date: '2022',
-      description: 'Enrolled in MS Data Science at UMBC, focusing on LLMs and RAG'
+      description: 'Published "3D CNN-Based Emotion Recognition" in Springer while pursuing MS at UMBC'
     },
     {
       id: '5',
-      title: 'Present Day',
-      date: '2025',
-      description: 'Continuing to push boundaries in enterprise AI solutions'
+      title: 'AI Research Assistant',
+      date: '2023',
+      description: 'UMBC Research - Built LSTM/XGBoost models for enrollment forecasting with 20% accuracy improvement'
+    },
+    {
+      id: '6',
+      title: 'Senior AI Engineer',
+      date: '2024',
+      description: 'UVS InfoTech - Leading enterprise AI solutions for federal agencies, healthcare, and education sectors'
     }
   ];
 
@@ -65,7 +72,7 @@ export const About: React.FC = () => {
             About Me
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Transforming data into intelligent solutions that make a real-world impact
+            Passionate AI/ML Engineer with a focus on building scalable, enterprise-grade solutions
           </p>
         </div>
 
@@ -149,12 +156,12 @@ export const About: React.FC = () => {
             {/* Professional Gallery */}
             <div className="mt-12">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
-                Professional Moments
+                Professional Moments at UVS InfoTech
               </h3>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
                 <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
                   <img
-                    src="/api/placeholder/300/200"
+                    src="/images/e4947897-0c0b-41e6-a0c8-a8203a7c4b59.JPG"
                     alt="UVS InfoTech team collaboration"
                     className="w-full h-32 object-cover group-hover:scale-110 transition-transform duration-300"
                   />
@@ -167,27 +174,88 @@ export const About: React.FC = () => {
                 
                 <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
                   <img
-                    src="/api/placeholder/300/200"
-                    alt="AI workspace at UVS InfoTech"
+                    src="/images/AF9A417D-6E57-49C4-99B4-7FC6E4385649.JPG"
+                    alt="UVS InfoTech team meeting"
                     className="w-full h-32 object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-2 left-2 text-white text-sm font-medium">
-                      AI Development
+                      Team Meeting
                     </div>
                   </div>
                 </div>
                 
-                <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 col-span-2">
+                <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
                   <img
-                    src="/api/placeholder/600/150"
-                    alt="UVS InfoTech office environment"
+                    src="/images/23EBE628-D0A5-4864-B32B-FF66BA563393.JPG"
+                    alt="UVS InfoTech workspace"
+                    className="w-full h-32 object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-2 left-2 text-white text-sm font-medium">
+                      Innovation Lab
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 col-span-2 lg:col-span-3">
+                  <img
+                    src={beachPhoto}
+                    alt="UVS InfoTech team celebration"
                     className="w-full h-24 object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-2 left-2 text-white text-sm font-medium">
-                      Innovation Hub
+                      Professional Moments @ UVS InfoTech
                     </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="mt-6 p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
+                <p className="text-sm text-green-800 dark:text-green-300 text-center">
+                  ✅ <strong>Updated!</strong> Now showing your actual UVS InfoTech professional photos
+                </p>
+              </div>
+            </div>
+
+            {/* Personal Moments */}
+            <div className="mt-12">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
+                Life Outside Work
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                  <img
+                    src={beachPhoto}
+                    alt="Sashank enjoying time at the beach"
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    style={{ 
+                      objectPosition: '50% 30%',
+                      filter: 'brightness(1.05) saturate(1.1)',
+                      transform: 'scale(1.4)'
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-4 left-4 text-white">
+                      <p className="text-lg font-medium">Beach Moments</p>
+                      <p className="text-sm opacity-90">Balancing work and life by the ocean</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-gradient-to-br from-blue-50 to-orange-50 dark:from-gray-800 dark:to-gray-700 rounded-lg p-6 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-16 h-16 mx-auto mb-4 bg-blue-600 rounded-full flex items-center justify-center">
+                      <span className="text-2xl">🏖️</span>
+                    </div>
+                    <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                      Work-Life Balance
+                    </h4>
+                    <p className="text-gray-600 dark:text-gray-300 text-sm">
+                      When I'm not building AI solutions, you'll find me exploring beaches, 
+                      enjoying nature, and finding inspiration for innovative ideas.
+                    </p>
                   </div>
                 </div>
               </div>

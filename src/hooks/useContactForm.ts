@@ -67,6 +67,7 @@ export const useContactForm = (): UseContactFormResult => {
   };
 
   const isValid = form.name.trim().length >= 2 && 
+                  form.email.trim().length > 0 && 
                   /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email) &&
                   form.message.trim().length >= 10 &&
                   (!form.phone || /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/.test(form.phone));
