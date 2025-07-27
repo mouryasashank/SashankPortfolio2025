@@ -7,7 +7,7 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
-  base: '/SashankPortfolioApril2025/',
+  base: '/SashankPortfolio2025/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
