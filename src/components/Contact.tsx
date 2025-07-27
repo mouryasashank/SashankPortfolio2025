@@ -56,15 +56,15 @@ export const Contact: React.FC = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-3 text-gray-600 dark:text-gray-300">
                 <Mail className="w-5 h-5 text-blue-600" />
-                <span>mouryasashank@email.com</span>
+                <span>mouryasasank2000@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-600 dark:text-gray-300">
                 <Phone className="w-5 h-5 text-blue-600" />
-                <span>+1 (555) 123-4567</span>
+                <span>+1 (410) 926-6647</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-600 dark:text-gray-300">
                 <MapPin className="w-5 h-5 text-blue-600" />
-                <span>Open to relocation</span>
+                <span>Baltimore, MD (Open to relocation)</span>
               </div>
             </div>
 

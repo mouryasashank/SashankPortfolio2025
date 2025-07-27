@@ -1,195 +1,220 @@
 import { Experience, Project, Education, Publication, Skill } from '../types';
 
-export const experiences: Experience[] = [
+export interface Certification {
+  id: string;
+  name: string;
+  issuer: string;
+  date: string;
+  status: 'Completed' | 'In Progress';
+  credentialUrl?: string;
+  icon: string;
+}
+
+export const certifications: Certification[] = [
   {
     id: '1',
-    company: 'UVS Infotech',
-    logo: 'https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop&crop=center',
-    title: 'Senior Data Scientist & Deep Learning Engineer',
-    duration: '2022 - Present',
-    location: 'Remote',
-    description: [
-      'Led development of enterprise AI solutions for healthcare and federal sectors',
-      'Architected and deployed scalable ML pipelines processing 10M+ daily transactions',
-      'Designed conversational AI systems using Dialogflow CX reducing support costs by 40%',
-      'Implemented computer vision models for medical imaging analysis with 95% accuracy',
-      'Mentored junior data scientists and established ML best practices across teams'
-    ],
-    technologies: ['Python', 'TensorFlow', 'PyTorch', 'GCP', 'AWS', 'Dialogflow CX', 'Kubernetes', 'MLflow'],
-    videoUrl: 'uvs_demo.mp4'
+    name: 'GCP Professional Data Engineer',
+    issuer: 'Google Cloud',
+    date: '2024',
+    status: 'In Progress',
+    icon: '☁️'
   },
   {
     id: '2',
-    company: 'Tech Innovations Inc',
-    logo: 'https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop&crop=center',
-    title: 'Data Scientist',
-    duration: '2020 - 2022',
-    location: 'Baltimore, MD',
+    name: 'UiPath Certified Professional Automation Developer',
+    issuer: 'UiPath',
+    date: '2024',
+    status: 'Completed',
+    icon: '🤖'
+  }
+];
+
+export const experiences: Experience[] = [
+  {
+    id: '1',
+    company: 'UVS InfoTech',
+    logo: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop&crop=center',
+    title: 'Data Scientist (AI/ML Engineer)',
+    duration: 'September 2024 - Present',
+    location: 'USA',
     description: [
-      'Developed predictive models for customer churn analysis improving retention by 25%',
-      'Built recommendation systems using collaborative filtering and deep learning',
-      'Implemented real-time fraud detection systems with 99.2% accuracy',
-      'Created automated reporting dashboards using Power BI and Tableau'
+      'Architected and delivered 6+ enterprise AI solutions for prestigious clients including UMMS, Elara Caring, and Wor-Wic Community College using multi-cloud architecture (Azure, AWS, GCP)',
+      'Developed an innovative Agentic AI Alexa assistant with RAG pipeline, achieving 87% efficiency improvement and handling 2M+ monthly queries with 92% accuracy using Azure AI Search and GPT-4',
+      'Built HIPAA-compliant real-time multilingual translation system using Telnyx and Google Gemini, reducing escalations by 40% with Prometheus/Grafana monitoring',
+      'Implemented Generative AI powered Dialogflow CX agent for UMMS and Wor-Wic, achieving 30% support cost reduction and 18% satisfaction increase',
+      'Led 5-member cross-functional team in multi-cloud MLOps deployment across Azure ML, AWS SageMaker, and GCP Vertex AI with CI/CD and A/B testing',
+      'Developed comprehensive KPI dashboards using Power BI and Grafana for data-driven decision making'
     ],
-    technologies: ['Python', 'Scikit-learn', 'Apache Spark', 'SQL', 'Power BI', 'Docker']
+    technologies: [
+      'Azure AI', 'AWS', 'GCP', 'GPT-4', 'LangGraph', 'BERT', 
+      'Dialogflow CX', 'Vertex AI', 'Google Gemini', 'UiPath',
+      'Azure DevOps', 'Prometheus', 'Grafana', 'Power BI'
+    ]
+  },
+  {
+    id: '2',
+    company: 'University of Maryland Baltimore County (UMBC)',
+    logo: 'https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop&crop=center',
+    title: 'AI Research Assistant',
+    duration: 'August 2023 - May 2024',
+    location: 'Baltimore, MD, USA',
+    description: [
+      'Developed ML models using LSTM and XGBoost for master\'s program enrollment forecasting, improving accuracy by 20%',
+      'Implemented SQL-based ELT pipelines and Tableau dashboards for tracking forecast accuracy',
+      'Reduced resource misallocation by 15% through data-driven insights',
+      'Created feedback analysis pipelines achieving 15% increase in satisfaction metrics'
+    ],
+    technologies: ['Python', 'LSTM', 'XGBoost', 'SQL', 'Tableau', 'ETL']
   },
   {
     id: '3',
-    company: 'Research Lab UMBC',
-    logo: 'https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop&crop=center',
-    title: 'Graduate Research Assistant',
-    duration: '2019 - 2021',
-    location: 'Baltimore, MD',
+    company: 'Cognizant Technology Solutions',
+    logo: 'https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop&crop=center',
+    title: 'Data Engineer',
+    duration: 'February 2021 - August 2022',
+    location: 'India',
     description: [
-      'Conducted cutting-edge research in Natural Language Processing and Computer Vision',
-      'Published 3 peer-reviewed papers in top-tier conferences',
-      'Developed novel deep learning architectures for multimodal learning',
-      'Collaborated with industry partners on funded research projects'
+      'Developed speech-to-text model using Librosa and ResNet-CRNN achieving 95% accuracy, processing 10K+ weekly audio records',
+      'Implemented AWS Lambda and Glue for automated data transformations in financial data processing',
+      'Built scalable ELT pipelines improving data freshness by 40%',
+      'Enhanced model stability by 15% through MLOps pipeline with drift monitoring and automated testing',
+      'Collaborated with cross-functional teams to optimize release cycles and usability'
     ],
-    technologies: ['Python', 'TensorFlow', 'OpenCV', 'NLTK', 'Jupyter', 'LaTeX']
+    technologies: ['AWS Lambda', 'AWS Glue', 'S3', 'Librosa', 'ResNet-CRNN', 'Pytest', 'MLOps']
+  },
+  {
+    id: '4',
+    company: 'SASTRA\'s Technology Business Incubator',
+    logo: 'https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop&crop=center',
+    title: 'AI Research Assistant',
+    duration: 'February 2019 - January 2021',
+    location: 'India',
+    description: [
+      'Engineered autonomous UGV-based cotton harvester using YOLOv3 and SLAM, improving path efficiency by 20%',
+      'Developed perception module using Python, MATLAB, and Arduino-IoT sensors, enhancing detection accuracy by 25%',
+      'Implemented SQLite-based data logging and custom telemetry viewers for field performance analysis',
+      'Published research at AgriTech symposiums and contributed to patent research drafts'
+    ],
+    technologies: ['YOLOv3', 'SLAM', 'Python', 'MATLAB', 'Arduino', 'IoT', 'SQLite', 'Git']
   }
 ];
 
 export const projects: Project[] = [
   {
     id: '1',
-    title: 'AI-Powered Medical Diagnosis System',
-    description: 'Deep learning model for automated medical image analysis with 95% accuracy in detecting anomalies from X-rays and CT scans.',
+    title: 'Agentic AI Alexa Assistant',
+    description: 'Voice-enabled RAG pipeline for federal agency achieving 87% efficiency improvement in SOP lookups. Serves 2M+ monthly queries with 92% accuracy.',
     image: 'https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg?auto=compress&cs=tinysrgb&w=600',
-    technologies: ['TensorFlow', 'OpenCV', 'Python', 'Docker', 'GCP'],
-    githubUrl: 'https://github.com/mouryasashank/medical-ai',
-    liveUrl: 'https://medical-ai-demo.com',
-    videoUrl: 'project_demo.mp4'
+    technologies: ['Azure AI Search', 'GPT-4', 'LangGraph', 'BERT', 'Azure Web App'],
+    githubUrl: 'https://github.com/mouryasashank',
+    videoUrl: 'alexa_demo.mp4'
   },
   {
     id: '2',
-    title: 'Conversational AI Chatbot',
-    description: 'Enterprise-grade chatbot using Dialogflow CX and LangGraph for customer service automation across multiple domains.',
+    title: 'HIPAA-Compliant Real-time Language Translator',
+    description: 'Multilingual phone call translation system using Telnyx and Google Gemini, reducing escalations by 40% with Prometheus monitoring.',
     image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600',
-    technologies: ['Dialogflow CX', 'LangGraph', 'Python', 'Node.js', 'MongoDB'],
-    githubUrl: 'https://github.com/mouryasashank/conversational-ai',
-    liveUrl: 'https://chatbot-demo.com'
+    technologies: ['Telnyx', 'Google Gemini', 'CCAI', 'Prometheus', 'Grafana'],
+    githubUrl: 'https://github.com/mouryasashank'
   },
   {
     id: '3',
-    title: 'Real-time Object Detection Pipeline',
-    description: 'YOLO-based object detection system for real-time video analysis with edge deployment capabilities.',
+    title: 'Conversational AI for Healthcare & Education',
+    description: 'Dialogflow CX conversational agent for UMMS and Wor-Wic Community College achieving 30% support cost reduction and 18% satisfaction increase.',
     image: 'https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&w=600',
-    technologies: ['YOLO', 'OpenCV', 'TensorRT', 'Python', 'Kubernetes'],
-    githubUrl: 'https://github.com/mouryasashank/object-detection',
-    liveUrl: 'https://object-detection-demo.com'
+    technologies: ['Dialogflow CX', 'Vertex AI', 'UiPath', 'Firebase'],
+    githubUrl: 'https://github.com/mouryasashank'
   },
   {
     id: '4',
-    title: 'MLOps Pipeline Framework',
-    description: 'Comprehensive MLOps solution for model lifecycle management with automated training, validation, and deployment.',
+    title: 'Speech-to-Text Disfluency Detection',
+    description: 'ML model using Librosa and ResNet-CRNN achieving 95% accuracy, processing 10K+ weekly audio records on AWS serverless infrastructure.',
     image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=600',
-    technologies: ['MLflow', 'Kubeflow', 'Docker', 'Jenkins', 'AWS'],
-    githubUrl: 'https://github.com/mouryasashank/mlops-framework'
+    technologies: ['Librosa', 'ResNet-CRNN', 'AWS Lambda', 'S3', 'MLOps'],
+    githubUrl: 'https://github.com/mouryasashank'
   },
   {
     id: '5',
-    title: 'Time Series Forecasting Platform',
-    description: 'Advanced forecasting platform using LSTM and Transformer models for financial and business analytics.',
+    title: 'Autonomous Cotton Harvester',
+    description: 'UGV-based autonomous system using YOLOv3 and SLAM, improving path efficiency by 20% and detection accuracy by 25%.',
     image: 'https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=600',
-    technologies: ['PyTorch', 'Pandas', 'FastAPI', 'React', 'PostgreSQL'],
-    githubUrl: 'https://github.com/mouryasashank/time-series-platform',
-    liveUrl: 'https://forecasting-platform.com'
+    technologies: ['YOLOv3', 'SLAM', 'Python', 'MATLAB', 'Arduino', 'IoT'],
+    githubUrl: 'https://github.com/mouryasashank'
   },
   {
     id: '6',
-    title: 'Natural Language Processing Suite',
-    description: 'Comprehensive NLP toolkit with sentiment analysis, named entity recognition, and text summarization capabilities.',
+    title: 'Enrollment Forecasting System',
+    description: 'LSTM and XGBoost models for university enrollment prediction with 20% accuracy improvement and Tableau dashboards.',
     image: 'https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=600',
-    technologies: ['spaCy', 'Transformers', 'FastAPI', 'Docker', 'Redis'],
-    githubUrl: 'https://github.com/mouryasashank/nlp-suite'
+    technologies: ['LSTM', 'XGBoost', 'SQL', 'Tableau', 'ETL'],
+    githubUrl: 'https://github.com/mouryasashank'
   }
 ];
 
 export const education: Education[] = [
   {
     id: '1',
-    institution: 'University of Maryland, Baltimore County',
-    logo: 'https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop&crop=center',
+    institution: 'University of Maryland Baltimore County',
+    logo: 'https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop&crop=center',
     degree: 'Master of Science',
     field: 'Data Science',
-    duration: '2019 - 2021',
-    location: 'Baltimore, MD',
-    description: 'Specialized in Machine Learning, Deep Learning, and Statistical Analysis. Thesis on "Advanced Neural Architectures for Multimodal Learning".'
+    duration: '2023 - 2024',
+    location: 'Baltimore, MD, USA',
+    description: 'Specialized in Machine Learning, Deep Learning, and AI applications. Research focus on predictive analytics and enrollment forecasting.'
   },
   {
     id: '2',
-    institution: 'Sastra University',
-    logo: 'https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop&crop=center',
+    institution: 'SASTRA Deemed University',
+    logo: 'https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop&crop=center',
     degree: 'Bachelor of Engineering',
     field: 'Electronics and Communication Engineering',
     duration: '2015 - 2019',
-    location: 'Thanjavur, India',
-    description: 'Foundation in signal processing, digital systems, and communication technologies. Active in robotics and AI clubs.'
+    location: 'India',
+    description: 'Foundation in electronics, signal processing, and embedded systems. Research in autonomous systems and computer vision.'
   }
 ];
 
 export const publications: Publication[] = [
   {
     id: '1',
-    title: 'Advanced Neural Architectures for Multimodal Medical Image Analysis',
-    description: 'A comprehensive study on combining computer vision and natural language processing for enhanced medical diagnosis accuracy.',
-    coverImage: 'https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg?auto=compress&cs=tinysrgb&w=400',
-    publishedDate: '2023-03-15',
-    authors: ['Mourya Sashank Sure', 'Dr. John Smith', 'Dr. Sarah Johnson'],
-    journal: 'IEEE Transactions on Medical Imaging',
-    url: 'https://ieeexplore.ieee.org/document/example'
-  },
-  {
-    id: '2',
-    title: 'Scalable MLOps Frameworks for Enterprise AI Deployment',
-    description: 'Best practices and architectural patterns for deploying machine learning models at scale in enterprise environments.',
-    coverImage: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=400',
-    publishedDate: '2022-11-20',
-    authors: ['Mourya Sashank Sure', 'Dr. Michael Brown'],
-    journal: 'Journal of Machine Learning Research',
-    url: 'https://jmlr.org/papers/example'
-  },
-  {
-    id: '3',
-    title: 'Conversational AI for Healthcare: Challenges and Opportunities',
-    description: 'An analysis of current challenges and future opportunities in implementing conversational AI systems within healthcare settings.',
-    coverImage: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=400',
-    publishedDate: '2022-08-10',
-    authors: ['Mourya Sashank Sure', 'Dr. Emily Davis', 'Dr. Robert Wilson'],
-    journal: 'Nature Digital Medicine',
-    url: 'https://nature.com/articles/example'
+    title: '3D CNN-Based Emotion Recognition Using Facial',
+    description: 'Research on advanced emotion recognition techniques using 3D Convolutional Neural Networks for facial analysis.',
+    coverImage: 'https://images.pexels.com/photos/4101143/pexels-photo-4101143.jpeg?auto=compress&cs=tinysrgb&w=400',
+    publishedDate: '2022-04-15',
+    authors: ['Teja K S S', 'Reddy T V', 'Sashank M', 'Revathi A'],
+    journal: 'Springer',
+    url: 'https://link.springer.com/chapter/example'
   }
 ];
 
 export const skills: Skill[] = [
   // AI/ML
-  { name: 'TensorFlow', icon: '🧠', category: 'AI/ML' },
+  { name: 'LLMs (BERT, GPT)', icon: '🧠', category: 'AI/ML' },
+  { name: 'LangGraph/LangChain', icon: '🔗', category: 'AI/ML' },
+  { name: 'RAG', icon: '📚', category: 'AI/ML' },
+  { name: 'Computer Vision', icon: '👁️', category: 'AI/ML' },
   { name: 'PyTorch', icon: '🔥', category: 'AI/ML' },
-  { name: 'Scikit-learn', icon: '📊', category: 'AI/ML' },
-  { name: 'OpenCV', icon: '👁️', category: 'AI/ML' },
-  { name: 'YOLO', icon: '🎯', category: 'AI/ML' },
-  { name: 'Transformers', icon: '🤖', category: 'AI/ML' },
-  { name: 'LangGraph', icon: '🔗', category: 'AI/ML' },
-  { name: 'spaCy', icon: '💬', category: 'AI/ML' },
+  { name: 'TensorFlow', icon: '⚡', category: 'AI/ML' },
+  { name: 'Hugging Face', icon: '🤗', category: 'AI/ML' },
   
   // Cloud
-  { name: 'Google Cloud Platform', icon: '☁️', category: 'Cloud' },
-  { name: 'Amazon Web Services', icon: '🌐', category: 'Cloud' },
-  { name: 'Microsoft Azure', icon: '⚡', category: 'Cloud' },
+  { name: 'AWS', icon: '☁️', category: 'Cloud' },
+  { name: 'Azure', icon: '💨', category: 'Cloud' },
+  { name: 'GCP', icon: '🌐', category: 'Cloud' },
   { name: 'Dialogflow CX', icon: '💭', category: 'Cloud' },
   
-  // Frameworks
-  { name: 'FastAPI', icon: '⚡', category: 'Frameworks' },
-  { name: 'Django', icon: '🐍', category: 'Frameworks' },
-  { name: 'React', icon: '⚛️', category: 'Frameworks' },
-  { name: 'Node.js', icon: '💚', category: 'Frameworks' },
-  
   // MLOps
-  { name: 'MLflow', icon: '📈', category: 'MLOps' },
-  { name: 'Kubeflow', icon: '🚀', category: 'MLOps' },
   { name: 'Docker', icon: '🐳', category: 'MLOps' },
-  { name: 'Kubernetes', icon: '☸️', category: 'MLOps' },
-  { name: 'Jenkins', icon: '🔧', category: 'MLOps' },
-  { name: 'Git', icon: '📝', category: 'MLOps' }
+  { name: 'Kubernetes', icon: '⚓', category: 'MLOps' },
+  { name: 'CI/CD', icon: '🔄', category: 'MLOps' },
+  { name: 'Airflow', icon: '🌬️', category: 'MLOps' },
+  { name: 'Prometheus', icon: '📊', category: 'MLOps' },
+  { name: 'Grafana', icon: '📈', category: 'MLOps' },
+  
+  // Frameworks & Tools
+  { name: 'SQL & NoSQL', icon: '💾', category: 'Frameworks' },
+  { name: 'MongoDB', icon: '🍃', category: 'Frameworks' },
+  { name: 'Redis', icon: '⚡', category: 'Frameworks' },
+  { name: 'Power BI', icon: '📊', category: 'Frameworks' },
+  { name: 'Tableau', icon: '📈', category: 'Frameworks' }
 ];

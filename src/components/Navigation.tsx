@@ -53,9 +53,12 @@ export const Navigation: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="font-bold text-xl bg-gradient-to-r from-blue-600 to-orange-600 bg-clip-text text-transparent">
-            MSS
-          </div>
+          <button 
+            onClick={() => scrollToSection('#hero')}
+            className="font-bold text-xl bg-gradient-to-r from-blue-600 via-purple-600 to-orange-600 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300"
+          >
+            Portfolio
+          </button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">

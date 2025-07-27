@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { Navigation } from './components/Navigation';
+import { DarkModeToggle } from './components/DarkModeToggle';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
 import { Experience } from './components/Experience';
@@ -39,6 +40,7 @@ function App() {
     <ThemeProvider>
       <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
         <Navigation />
+        <DarkModeToggle position="top-right" />
         
         <main>
           <div id="hero">

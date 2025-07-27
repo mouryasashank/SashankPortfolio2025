@@ -8,30 +8,30 @@ export const About: React.FC = () => {
       id: '1',
       title: 'Started AI Journey',
       date: '2018',
-      description: 'Began exploring machine learning during undergraduate studies'
+      description: 'Began exploring machine learning and deep learning during undergraduate studies'
     },
     {
       id: '2',
-      title: 'Graduate Studies',
+      title: 'Stepped on AI Industry',
       date: '2019',
-      description: 'Enrolled in MS Data Science at UMBC, focusing on deep learning'
+      description: 'Worked on real-world problems and started working on deep learning models'
     },
     {
       id: '3',
       title: 'Research Breakthrough',
       date: '2020',
-      description: 'Published first paper on multimodal learning architectures'
+      description: 'Published first paper on 3D CNN Based Emotion Recognition'
     },
     {
       id: '4',
-      title: 'Industry Leadership',
+      title: 'Graduate Studies',
       date: '2022',
-      description: 'Joined UVS Infotech as Senior Data Scientist, leading AI initiatives'
+      description: 'Enrolled in MS Data Science at UMBC, focusing on LLMs and RAG'
     },
     {
       id: '5',
       title: 'Present Day',
-      date: '2024',
+      date: '2025',
       description: 'Continuing to push boundaries in enterprise AI solutions'
     }
   ];
@@ -75,7 +75,7 @@ export const About: React.FC = () => {
             <div className="prose prose-lg dark:prose-invert max-w-none">
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
                 Professionally, I specialize in delivering enterprise AI solutions across healthcare, 
-                federal, and higher-ed sectors. With a strong foundation in both theoretical knowledge 
+                federal, and higher education sectors. With a strong foundation in both theoretical knowledge 
                 and practical implementation, I bridge the gap between cutting-edge research and 
                 real-world applications.
               </p>
@@ -100,8 +100,8 @@ export const About: React.FC = () => {
               </h3>
               <ul className="space-y-3">
                 {[
-                  '5+ years of experience in AI/ML development',
-                  '3 published papers in top-tier journals',
+                  '3+ years of experience in AI/ML development',
+                  'Published paper in top-tier journal',
                   'Led teams of 10+ data scientists and engineers',
                   'Deployed models processing 10M+ daily transactions',
                   'Expert in both cloud and edge AI deployments'
@@ -145,6 +145,53 @@ export const About: React.FC = () => {
               My Journey
             </h3>
             <Timeline items={timelineItems} />
+            
+            {/* Professional Gallery */}
+            <div className="mt-12">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
+                Professional Moments
+              </h3>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                  <img
+                    src="/api/placeholder/300/200"
+                    alt="UVS InfoTech team collaboration"
+                    className="w-full h-32 object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-2 left-2 text-white text-sm font-medium">
+                      Team Collaboration
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                  <img
+                    src="/api/placeholder/300/200"
+                    alt="AI workspace at UVS InfoTech"
+                    className="w-full h-32 object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-2 left-2 text-white text-sm font-medium">
+                      AI Development
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 col-span-2">
+                  <img
+                    src="/api/placeholder/600/150"
+                    alt="UVS InfoTech office environment"
+                    className="w-full h-24 object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-2 left-2 text-white text-sm font-medium">
+                      Innovation Hub
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
