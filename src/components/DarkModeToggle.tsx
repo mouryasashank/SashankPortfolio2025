@@ -10,22 +10,29 @@ export const DarkModeToggle: React.FC<DarkModeToggleProps> = ({ position = 'top-
   const { isDark, toggleTheme } = useTheme();
 
   const positionClasses = {
-    'top-right': 'fixed top-28 right-6 z-50',
-    'top-left': 'fixed top-28 left-6 z-50'
+    'top-right': 'fixed top-24 right-6 z-50',
+    'top-left': 'fixed top-24 left-6 z-50'
   };
 
   return (
     <button
       onClick={toggleTheme}
-      className={`${positionClasses[position]} p-3 rounded-full bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:scale-110 group`}
+      className={`${positionClasses[position]} flex items-center p-2 rounded-full bg-gray-200 dark:bg-gray-700 shadow-lg border border-gray-300 dark:border-gray-600 hover:shadow-xl transition-all duration-300 hover:scale-105 group relative overflow-hidden`}
       title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
       aria-label="Toggle theme"
     >
-      {isDark ? (
-        <Sun className="h-5 w-5 text-yellow-500 group-hover:rotate-180 transition-transform duration-300" />
-      ) : (
-        <Moon className="h-5 w-5 text-gray-700 group-hover:rotate-12 transition-transform duration-300" />
-      )}
+      {/* Background slider */}
+      <div className={`absolute inset-1 w-8 h-8 bg-white dark:bg-gray-800 rounded-full shadow-md transition-transform duration-300 ${isDark ? 'translate-x-8' : 'translate-x-0'}`}></div>
+      
+      {/* Sun icon */}
+      <div className="relative z-10 p-1">
+        <Sun className={`h-4 w-4 transition-colors duration-300 ${!isDark ? 'text-yellow-500' : 'text-gray-400'}`} />
+      </div>
+      
+      {/* Moon icon */}
+      <div className="relative z-10 p-1">
+        <Moon className={`h-4 w-4 transition-colors duration-300 ${isDark ? 'text-blue-400' : 'text-gray-400'}`} />
+      </div>
     </button>
   );
 };
