@@ -10,8 +10,8 @@ export const DarkModeToggle: React.FC<DarkModeToggleProps> = ({ position = 'top-
   const { isDark, toggleTheme } = useTheme();
 
   const positionClasses = {
-    'top-right': 'fixed top-6 right-6 z-50',
-    'top-left': 'fixed top-6 left-6 z-50'
+    'top-right': 'fixed top-20 right-6 z-50',
+    'top-left': 'fixed top-20 left-6 z-50'
   };
 
   return (
