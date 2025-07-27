@@ -1,66 +1,41 @@
 import React from 'react';
 import { Github, Linkedin, BookOpen, ArrowRight } from 'lucide-react';
 import { Timeline } from './Timeline';
-import beachPhoto from '../assets/images/beach-photo.jpg';
+import beachPhoto from '../assets/images/beach-photo2.jpg';
 
 export const About: React.FC = () => {
   const timelineItems = [
     {
       id: '1',
-      title: 'Started AI Journey',
-      date: '2018',
-      description: 'Began exploring machine learning and deep learning during undergraduate studies at SASTRA University'
+      title: 'AI/ML Engineer',
+      subtitle: 'UVS InfoTech',
+      date: '2024-Present',
+      location: 'USA',
+      description: 'Leading enterprise AI solutions across federal, healthcare, and education sectors. Deployed systems serving 2M+ queries/month with 87% efficiency improvements.'
     },
     {
       id: '2',
-      title: 'First Industry Experience',
-      date: '2019',
-      description: 'Joined SASTRA Technology Business Incubator - Built autonomous UGV cotton harvester using YOLOv3 and SLAM'
+      title: 'AI Research Assistant',
+      subtitle: 'UMBC',
+      date: '2023-2024',
+      location: 'Baltimore, MD',
+      description: 'Built ML models for enrollment forecasting, achieving 20% accuracy improvement. Developed Tableau dashboards and feedback analysis systems.'
     },
     {
       id: '3',
-      title: 'Data Engineering Role',
-      date: '2021',
-      description: 'Joined Cognizant - Developed speech-to-text models achieving 95% accuracy for disfluency detection'
+      title: 'Data Engineer',
+      subtitle: 'Cognizant Technology Solutions',
+      date: '2021-2022',
+      location: 'India',
+      description: 'Pioneered speech-to-text models with 95% accuracy. Built scalable ELT pipelines and MLOps infrastructure on AWS.'
     },
     {
       id: '4',
-      title: 'Research & Publication',
-      date: '2022',
-      description: 'Published "3D CNN-Based Emotion Recognition" in Springer while pursuing MS at UMBC'
-    },
-    {
-      id: '5',
       title: 'AI Research Assistant',
-      date: '2023',
-      description: 'UMBC Research - Built LSTM/XGBoost models for enrollment forecasting with 20% accuracy improvement'
-    },
-    {
-      id: '6',
-      title: 'Senior AI Engineer',
-      date: '2024',
-      description: 'UVS InfoTech - Leading enterprise AI solutions for federal agencies, healthcare, and education sectors'
-    }
-  ];
-
-  const socialLinks = [
-    {
-      icon: Linkedin,
-      label: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/mouryasashank/',
-      color: 'hover:text-blue-600'
-    },
-    {
-      icon: Github,
-      label: 'GitHub',
-      url: 'https://github.com/mouryasashank',
-      color: 'hover:text-gray-900 dark:hover:text-white'
-    },
-    {
-      icon: BookOpen,
-      label: 'Medium',
-      url: 'https://medium.com/@mouryasashank',
-      color: 'hover:text-green-600'
+      subtitle: 'SASTRA Technology Business Incubator',
+      date: '2019-2021',
+      location: 'India',
+      description: 'Engineered autonomous UGV-based cotton harvester using YOLOv3 and SLAM. Published research and contributed to patent drafts.'
     }
   ];
 
@@ -72,81 +47,67 @@ export const About: React.FC = () => {
             About Me
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Passionate AI/ML Engineer with a focus on building scalable, enterprise-grade solutions
+            Passionate about transforming complex challenges into intelligent solutions through cutting-edge AI/ML technologies
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Bio Section */}
-          <div className="space-y-6">
-            <div className="prose prose-lg dark:prose-invert max-w-none">
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                Professionally, I specialize in delivering enterprise AI solutions across healthcare, 
-                federal, and higher education sectors. With a strong foundation in both theoretical knowledge 
-                and practical implementation, I bridge the gap between cutting-edge research and 
-                real-world applications.
+          <div>
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+              Who I Am
+            </h3>
+            <div className="space-y-6">
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                I'm an AI/ML Engineer with <strong>3+ years of hands-on experience</strong> building and deploying 
+                production-grade AI systems that drive real business impact. My passion lies in bridging the gap 
+                between cutting-edge research and practical enterprise solutions.
               </p>
               
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                My expertise spans the full spectrum of the AI development lifecycle, from initial 
-                problem formulation and data exploration to model deployment and monitoring in 
-                production environments. I'm passionate about creating solutions that not only 
-                perform well technically but also deliver measurable business value.
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                At <strong>UVS InfoTech</strong>, I've successfully delivered <strong>6+ enterprise AI solutions</strong> 
+                across federal agencies, healthcare organizations, and educational institutions. My work has resulted 
+                in serving <strong>2M+ voice queries per month</strong> and achieving <strong>87% latency reductions</strong> 
+                in critical business processes.
               </p>
-              
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
-                Open to relocation and eager for new challenges that push the boundaries of what's 
-                possible with artificial intelligence and machine learning.
+
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                I specialize in <strong>Conversational AI, Agentic AI, and Computer Vision</strong>, with deep expertise 
+                in LLMs, RAG pipelines, and multi-cloud deployments. My technical foundation includes advanced work 
+                with PyTorch, TensorFlow, and cloud platforms like AWS, Azure, and GCP.
               </p>
-            </div>
 
-            {/* Key Highlights */}
-            <div className="bg-gradient-to-r from-blue-50 to-orange-50 dark:from-blue-900/20 dark:to-orange-900/20 rounded-lg p-6 border border-blue-200/50 dark:border-blue-700/50">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                Key Highlights
-              </h3>
-              <ul className="space-y-3">
-                {[
-                  '3+ years of experience in AI/ML development',
-                  'Published paper in top-tier journal',
-                  'Led teams of 10+ data scientists and engineers',
-                  'Deployed models processing 10M+ daily transactions',
-                  'Expert in both cloud and edge AI deployments'
-                ].map((highlight, index) => (
-                  <li key={index} className="flex items-center text-gray-700 dark:text-gray-300">
-                    <ArrowRight className="w-4 h-4 text-blue-600 mr-3 flex-shrink-0" />
-                    {highlight}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Social Links */}
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                Connect With Me
-              </h3>
-              <div className="flex space-x-4">
-                {socialLinks.map((link) => {
-                  const IconComponent = link.icon;
-                  return (
-                    <a
-                      key={link.label}
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`p-3 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 ${link.color} transition-all duration-300 hover:shadow-lg transform hover:scale-110`}
-                      title={link.label}
-                    >
-                      <IconComponent className="w-6 h-6" />
-                    </a>
-                  );
-                })}
+              <div className="flex flex-wrap gap-4 pt-4">
+                <a
+                  href="https://github.com/mouryasashank"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-4 py-2 bg-gray-900 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors duration-300"
+                >
+                  <Github className="w-4 h-4 mr-2" />
+                  GitHub
+                </a>
+                <a
+                  href="https://linkedin.com/in/mouryasashank"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300"
+                >
+                  <Linkedin className="w-4 h-4 mr-2" />
+                  LinkedIn
+                </a>
+                <a
+                  href="https://medium.com/@mouryasashank"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-300"
+                >
+                  <BookOpen className="w-4 h-4 mr-2" />
+                  Medium
+                </a>
               </div>
             </div>
           </div>
 
-          {/* Timeline Section */}
           <div>
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
               My Journey
@@ -200,7 +161,7 @@ export const About: React.FC = () => {
                 
                 <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 col-span-2 lg:col-span-3">
                   <img
-                    src={beachPhoto}
+                    src="/images/IMG_9530.JPG"
                     alt="UVS InfoTech team celebration"
                     className="w-full h-24 object-cover group-hover:scale-110 transition-transform duration-300"
                   />
@@ -210,12 +171,6 @@ export const About: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-              
-              <div className="mt-6 p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
-                <p className="text-sm text-green-800 dark:text-green-300 text-center">
-                  ✅ <strong>Updated!</strong> Now showing your actual UVS InfoTech professional photos
-                </p>
               </div>
             </div>
 
@@ -232,8 +187,7 @@ export const About: React.FC = () => {
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                     style={{ 
                       objectPosition: '50% 30%',
-                      filter: 'brightness(1.05) saturate(1.1)',
-                      transform: 'scale(1.4)'
+                      filter: 'brightness(1.05) saturate(1.1)'
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
